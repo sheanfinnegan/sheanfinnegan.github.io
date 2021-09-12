@@ -1,0 +1,525 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root {
+    --surface-color: #fff;
+    --curve: 40;
+}
+
+* {
+    margin: 0%;
+    font-family: 'Poppins';
+
+
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 3.3rem;
+}
+
+body {
+
+    height: 100vh;
+    position: relative;
+}
+
+/* preloader */
+.preloader {
+    background: #F0F0F0 url('https://createwebsite.net/wp-content/uploads/2015/09/Spinnner.gif') no-repeat center center;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index: 100;
+}
+
+#navbar a[href="#footer"] {
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+#navbar a[href="#footer"]:hover {
+    color: lightseagreen;
+}
+
+.container {
+    width: 100%;
+    position: fixed;
+    z-index: 3;
+    padding: 15px 20px;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ilang {
+    display: flex;
+    align-items: center;
+
+}
+
+.container ul {
+    padding-left: 0;
+    padding-right: 35px;
+    display: flex;
+    align-items: center;
+}
+
+.container ul li {
+    list-style: none;
+    margin-right: 17px;
+
+}
+
+.container ul li a {
+    text-decoration: none;
+    color: white;
+
+}
+
+.container ul li a:hover {
+    color: rgb(46, 199, 191);
+    cursor: pointer;
+}
+
+.container .ulkedua {
+    display: none;
+}
+
+#toggle-icon {
+    padding-right: 45px;
+    margin: auto;
+    display: none;
+    cursor: pointer;
+
+}
+
+
+
+#toggle-icon span {
+    margin-bottom: 5px;
+    display: block;
+    background-color: white;
+    padding: 2px 20px;
+    border-radius: 10px;
+    transition: all .5s;
+}
+
+
+
+.rotate-icon .bar1 {
+    transition: all .5s;
+    -webkit-transform: rotate(-45deg) translate(-8px, 6px);
+    transform: rotate(-45deg) translate(-4px, 3.3px);
+}
+
+.rotate-icon .bar2 {
+    opacity: 0;
+}
+
+.rotate-icon .bar3 {
+    transition: all .5s;
+    -webkit-transform: rotate(42deg) translate(-9px, -8px);
+    transform: rotate(42deg) translate(-9px, -8px);
+}
+
+/* bagian home */
+#home {
+    background: url('https://th.bing.com/th/id/R.3f6f65e22339f169c84ce400f90e8945?rik=1ve%2ft%2feI8A8Agw&riu=http%3a%2f%2fwallup.net%2fwp-content%2fuploads%2f2015%2f12%2f63801-nature-mountain-landscape-stones-moss.jpg&ehk=iC1QA4T03f8AFEARUWA3OZbdfEMbyDUXIgO4Wb5%2bmqk%3d&risl=&pid=ImgRaw&r=0') no-repeat center center;
+    background-blend-mode: darken;
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+
+#home h2 {
+    opacity: 0;
+    transform: translate(0, -20px);
+    transition: .7s;
+}
+
+#home h2.munculshean {
+    opacity: 1;
+    transform: translate(0, 0)
+}
+
+#home p {
+    display: none;
+}
+
+.showhide {
+    transition: .5s;
+}
+
+.showhide:hover {
+    background-color: lightseagreen;
+}
+
+/* Bagian About */
+
+
+.artikelabout {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0px 50px 50px 50px;
+}
+
+.artikelabout p {
+    text-align: justify;
+}
+
+.pkiri,
+.pkanan {
+    opacity: 0;
+    transform: translate(-50px, 0);
+    transition: 1s;
+}
+
+.pkanan {
+    transform: translate(50px, 0);
+}
+
+.pkiri.muncultext,
+.pkanan.muncultext {
+    transform: translate(0, 0);
+    opacity: 1;
+}
+
+/* projek */
+#project {
+    padding: .5rem;
+    padding-bottom: 4.8rem;
+    background: rgba(0, 0, 0, 0.2) url('https://images2.alphacoders.com/596/596733.jpg') no-repeat center center;
+    background-blend-mode: darken;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: 'Poppins';
+}
+
+.cards {
+    opacity: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 4rem 5vw;
+    padding: 0;
+    list-style-type: none;
+    transform: translate(0, -20px);
+    transition: .7s;
+}
+
+.cards.munculgambar {
+    transform: translate(0, 0);
+    opacity: 1;
+}
+
+.card {
+    position: relative;
+    display: block;
+    height: 100%;
+    border-radius: calc(var(--curve) * 1px);
+    overflow: hidden;
+    text-decoration: none;
+    box-shadow: 0px 0px 10px black;
+}
+
+.card__image {
+    width: 100%;
+    height: auto;
+}
+
+.card__overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    border-radius: calc(var(--curve) * 1px);
+    background-color: var(--surface-color);
+    transform: translateY(100%);
+    transition: .2s ease-in-out;
+}
+
+.card:hover .card__overlay {
+    transform: translateY(0);
+}
+
+.card__header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    padding: 2em;
+    border-radius: calc(var(--curve) * 1px) 0 0 0;
+    background-color: var(--surface-color);
+    transform: translateY(-100%);
+    transition: .2s ease-in-out;
+}
+
+.card__arc {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+    z-index: 1;
+}
+
+.card__arc path {
+    fill: var(--surface-color);
+    d: path("M 40 80 c 22 0 40 -22 40 -40 v 40 Z");
+}
+
+.card:hover .card__header {
+    transform: translateY(0);
+}
+
+.card__thumb {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.card__title {
+    font-size: 1em;
+    margin: 0 0 .3em;
+    color: #6A515E;
+}
+
+.card__tagline {
+    display: block;
+    margin: 1em 0;
+    font-family: "MockFlowFont";
+    font-size: .8em;
+    color: #D7BDCA;
+}
+
+.card__status {
+    font-size: .8em;
+    color: #b37f99;
+}
+
+.card__description {
+    padding: 0 2em 2em;
+    margin: 0;
+    color: black;
+    font-family: "Poppins";
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+
+#coming {
+    cursor: pointer;
+}
+
+/* Contact */
+#contact form {
+    box-shadow: 0px 0px 7px black;
+    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 5rem;
+    border-radius: 30px;
+    max-width: 600px;
+    background: rgba(0, 0, 0, 0.3) url('pic-1/pohonbg.jpg') no-repeat center center;
+    background-blend-mode: darken;
+    background-size: cover;
+    /* background-attachment: fixed; */
+    padding: 2rem 2rem 2rem 2rem;
+}
+
+#contact form .massage {
+    display: flex;
+    margin-top: 7px;
+
+}
+
+#contact form .email,
+#contact form .massage,
+#contact form .name {
+    padding: .5rem;
+}
+
+#contact form .email label,
+#contact form .massage label,
+#contact form .name label {
+    color: white;
+    text-shadow: 1px 1px 2px black;
+}
+
+#contact form .email input {
+    margin-left: 5px;
+}
+
+#contact form .massage textarea {
+    margin-left: 10px;
+}
+
+#contact form .massage textarea {
+    border-radius: 20px;
+    font-weight: bold;
+    padding: 7.5px 12px;
+}
+
+#contact form .email input,
+#contact form .name input {
+    font-weight: bold;
+    min-width: 85%;
+    padding: 2px 10px;
+    border-radius: 20px;
+}
+
+/* footer */
+footer {
+    padding: 2rem 2rem 1.8rem 2rem;
+    background-color: black;
+    color: white;
+    font-size: 19px;
+}
+
+.but button {
+    cursor: pointer;
+    margin-top: 1rem;
+    padding: 2px 10px;
+    font-size: 17px;
+    font-weight: bold;
+    box-shadow: 1px 1px 1px black;
+    border-radius: 20px;
+    transition: .5s;
+}
+
+.but button:hover {
+    background-color: lightseagreen;
+}
+
+@media (max-width: 690px) {
+    #contact form {
+        max-width: 500px;
+    }
+
+    #contact form .email input {
+        margin-left: 0;
+
+    }
+
+    .massage {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #contact form .massage textarea {
+        margin-top: 5px;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 610px) {
+
+    #contact form {
+        max-width: 450px;
+    }
+
+    /* 
+    #contact form .email {
+        display: flex;
+        flex-direction: column;
+    } */
+
+    #contact form .email input {
+        margin-left: 0;
+
+    }
+}
+
+@media (max-width: 568px) {
+    #contact form {
+        max-width: 350px;
+    }
+
+    #toggle-icon {
+        display: unset;
+        z-index: 1;
+        margin: auto 0 auto auto;
+    }
+
+    .container ul {
+        display: none;
+    }
+
+    .container .ulkedua {
+        overflow: hidden;
+        cursor: pointer;
+        top: 0;
+        opacity: 0;
+        width: 0px;
+        height: 100vh;
+        padding-left: 0;
+        background-color: black;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        right: 0;
+        padding-top: 35px;
+        padding-bottom: 13px;
+        transition: all .5s;
+    }
+
+    .container .ulkedua li {
+        opacity: 0;
+        margin: auto;
+    }
+
+
+    .container .ulkedua:hover {
+        color: rgb(46, 199, 191);
+    }
+
+    .artikelabout {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .artikelabout p:nth-child(1) {
+        margin-right: 0 !important;
+        margin-bottom: 1.5rem;
+
+    }
+
+    /* #about div:nth-child(1) {
+        max-width: 300px !important;
+    } */
+
+}
+
+@media (max-width: 450px) {
+    #contact form {
+        max-width: 300px;
+    }
+}
+
+@media(max-width:384px) {
+    #contact form {
+        max-width: 270px;
+    }
+}
+
+@media(max-width:354px) {
+    #contact form {
+        max-width: 220px;
+    }
+}
+
+@media(max-width:338px) {
+
+
+
+    #project ul {
+        margin: 4rem auto;
+    }
+}
