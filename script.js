@@ -27,7 +27,7 @@ $(document).ready(function () {
     $(window).scroll(function () {
         const wScroll = $(this).scrollTop();
         console.log(wScroll)
-        if (wScroll > $('#project').offset().top - 350) {
+        if (wScroll > $('#project').offset().top - 350 && wScroll < $('#contact').offset().top - 315) {
             $('#project li').each(function (i) {
                 setTimeout(function () {
                     $('#project li').eq(i).addClass('munculgambar')
