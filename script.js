@@ -12,13 +12,33 @@ $(document).ready(function () {
         }, 1300)
     });
 
+    // $(window).scroll(function () {
+    //     const wScroll = $(this).scrollTop();
+    //     console.log(wScroll)
+    //     if (wScroll > $('#project').offset().top - 350) {
+    //         $('.cards').addClass('munculgambar')
+    //     } else {
+    //         $('.cards').removeClass('munculgambar')
+    //     }
+    // })
+
+    // animasi satu satu
+
     $(window).scroll(function () {
         const wScroll = $(this).scrollTop();
         console.log(wScroll)
         if (wScroll > $('#project').offset().top - 350) {
-            $('.cards').addClass('munculgambar')
+            $('#project li').each(function (i) {
+                setTimeout(function () {
+                    $('#project li').eq(i).addClass('munculgambar')
+                }, 200 * (i + 1))
+            })
         } else {
-            $('.cards').removeClass('munculgambar')
+            $('#project li').each(function (i) {
+                setTimeout(function () {
+                    $('#project li').eq(i).removeClass('munculgambar')
+                }, 200 * (i + 1))
+            })
         }
     })
 

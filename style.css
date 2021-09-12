@@ -200,18 +200,22 @@ body {
 }
 
 .cards {
-    opacity: 0;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin: 4rem 5vw;
     padding: 0;
     list-style-type: none;
+
+}
+
+#project li {
+    opacity: 0;
     transform: translate(0, -20px);
     transition: .7s;
 }
 
-.cards.munculgambar {
+#project li.munculgambar {
     transform: translate(0, 0);
     opacity: 1;
 }
@@ -507,7 +511,12 @@ footer {
     #contact form {
         max-width: 270px;
     }
+
+    #home p {
+        font-size: 14px;
+    }
 }
+
 
 @media(max-width:354px) {
     #contact form {
