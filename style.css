@@ -396,10 +396,39 @@ body {
 
 /* footer */
 footer {
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row-reverse;
     padding: 2rem 2rem 1.8rem 2rem;
     background-color: black;
     color: white;
     font-size: 19px;
+}
+
+.sosmed a {
+    text-decoration: none;
+    align-items: center;
+    display: flex;
+}
+
+.sosmed a span {
+    color: white;
+    transition: .3s;
+}
+
+.sosmed a span:hover {
+    color: lightseagreen;
+}
+
+.sosmed a img {
+    margin-right: 8px;
+    transition: .2s;
+
+}
+
+.sosmed a img:hover {
+    transform: scale(1.1);
 }
 
 .but button {
@@ -435,6 +464,15 @@ footer {
     #contact form .massage textarea {
         margin-top: 5px;
         margin-left: 0;
+    }
+
+    #footer {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    #footer p {
+        margin-bottom: 10px;
     }
 }
 
