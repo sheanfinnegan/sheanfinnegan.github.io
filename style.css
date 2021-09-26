@@ -555,38 +555,18 @@ footer {
 
 }
 
-@media (max-width: 450px) {
+@media (max-width: 576px) {
     #contact form {
-        max-width: 300px;
+        max-width: 275px;
     }
-}
 
-@media(max-width:387px) {
     #footer p {
         text-align: center;
-    }
-}
-
-@media(max-width:384px) {
-    #contact form {
-        max-width: 270px;
     }
 
     #home p {
         font-size: 14px;
     }
-}
-
-
-@media(max-width:354px) {
-    #contact form {
-        max-width: 220px;
-    }
-}
-
-@media(max-width:338px) {
-
-
 
     #project ul {
         margin: 4rem auto;
